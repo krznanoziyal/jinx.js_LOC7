@@ -32,7 +32,7 @@ export default function LoginSignup() {
             <div className="flex items-center justify-center">
               <ShoppingCart className="h-8 w-8 text-primary" />
               <CardTitle className="text-2xl font-bold ml-2">
-                LogiYatra
+                Trackify
               </CardTitle>
             </div>
             <CardDescription>
@@ -183,7 +183,7 @@ export default function LoginSignup() {
           </CardContent>
           <CardFooter className="block ">
             <p className="px-8 mb-3 text-center text-sm text-muted-foreground">
-              Want to use LogiYatra for your company?
+              Want to use Trackify for your company?
               <a
                 href="/company-add"
                 className="underline underline-offset-4 hover:text-primary"
