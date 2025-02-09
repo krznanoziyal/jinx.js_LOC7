@@ -1,147 +1,36 @@
-# 🎯 LogiYatra
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-> An AI/ML-powered solution for hyperlocal businesses to optimize inventory management and business processes
+## Getting Started
 
-LogiYatra leverages Natural Language Processing, Artificial Intelligence, and Data Analytics to provide actionable insights for efficient inventory management and customer trend analysis. Perfect for businesses looking to streamline their operations and make data-driven decisions.
+First, run the development server:
 
-## ✨ Key Features
-
-### 📱 Platform & Interface
-- **Dual Platform Support**: Streamlined mobile app for essential functions + comprehensive web interface for detailed analytics
-- **Interactive Chatbot**: Get personalized industry and market trend insights
-- **Real-time CSV Agent**: Direct database interaction for custom queries and analysis
-
-### 📊 Analytics & Forecasting
-- **Smart Demand Forecasting**: Predict product trends and analyze customer demands
-- **Market Insights with NLP**: Analyze market trends and customer sentiment
-- **Comprehensive Analytics**: Detailed reports with interactive graph analysis
-- **Seasonal Intelligence**: Optimize stock based on holiday patterns and peak times
-
-### 📦 Inventory Management
-- **Smart Reordering**: Automated stock replenishment based on AI predictions
-- **FIFO Implementation**: Systematic older stock prioritization
-- **Branch Sync**: Cross-branch notifications for efficient stock transfers
-- **Waste Reduction**: Integrated charity recommendations and automated discounts for aging stock
-
-## 🛠️ Tech Stack
-
-- **Backend**: FastAPI
-- **Frontend**: Streamlit
-- **Database**: Firebase
-- **Language**: Python
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Python 3.8+
-- Firebase account
-- Virtual environment tool
-
-### Installation
-
-1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/LogiYatra.git
-cd LogiYatra
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-2. Set up virtual environment
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-4. Configure Firebase
-- Place your `mh.json` credentials file in the project root
-- Set up necessary environment variables
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### Running the Application
+## Learn More
 
-1. Start the Backend
-```bash
-uvicorn main:app --reload
-```
+To learn more about Next.js, take a look at the following resources:
 
-2. Launch the Frontend
-```bash
-streamlit run app.py
-```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Visit `http://localhost:8501` to access the LogiYatra interface.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## 🔗 API Endpoints
+## Deploy on Vercel
 
-### 1. Root Endpoint
-```http
-GET /
-```
-Welcome endpoint to verify API status
-- **Response**: `{ "message": "Welcome to LogiYatra" }`
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### 2. CSV Analysis
-```http
-POST /analyze/csv
-```
-Upload and analyze CSV data
-- **Parameters**:
-  - `csv_file`: File upload
-  - `question`: Analysis query
-- **Returns**: File URL and analysis results
-
-### 3. Industry Insights
-```http
-GET /ask_food_question/
-```
-Food industry knowledge base query
-- **Parameters**:
-  - `question`: Industry-related query
-- **Returns**: AI-generated answer based on market data
-
-### 4. Sales Forecasting
-```http
-POST /forecast
-```
-Predictive sales analysis
-- **Body**:
-  ```json
-  {
-    "csv_file_path": "path/to/sales.csv",
-    "test_file_path": "path/to/test.csv"
-  }
-  ```
-- **Returns**: Sales statistics and forecast analysis
-
-## 💡 Example Usage
-
-### CSV Analysis
-```python
-import requests
-
-files = {'csv_file': open('sales_data.csv', 'rb')}
-data = {'question': 'What are the top-selling products?'}
-response = requests.post('http://localhost:8000/analyze/csv', files=files, data=data)
-```
-
-### Sales Forecast
-```python
-import requests
-
-data = {
-    "csv_file_path": "historical_sales.csv",
-    "test_file_path": "validation_data.csv"
-}
-response = requests.post('http://localhost:8000/forecast', json=data)
-```
-
-## 📝 Notes
-- Ensure all dependencies are properly installed
-- Firebase configuration (`mh.json`) must be valid
-- For production deployment, configure appropriate security measures
-
----
-Made with ❤️ by the LogiYatra Team
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
